@@ -1,0 +1,114 @@
+#section-footer,
+        .footer {
+            background-color: #eee;
+        }
+
+        #section-connect-footer {
+            background-color: #333;
+        }
+
+        #section-connect-footer a,small {
+            color: white;
+        }
+
+        .connect-with-us li {
+            display: inline;
+            font-size: 20px;
+        }
+
+        #section-footer li {
+            list-style-type: none;
+        }
+
+        .list-footer a {
+            text-decoration: none;
+
+            color: black;
+        }
+
+        .list-footer-line {
+            width: 50%;
+            height: 2px;
+            background-color: orange;
+            margin-left: 0;
+        }
+
+        .new-price {
+            color: red;
+            font-weight: bold;
+        }
+
+        .img-marketing {
+            width: 150px;
+            height: 150px;
+        }
+
+        .home-intro-slider {
+
+            height: 450px;
+        }
+        .main-menu a:hover + .line {
+            width: 80px;           
+        }
+        .line {
+            width: 0px;
+            height: 3px;
+            background: orange;   
+            transition: width 1s;     
+        }
+        .navbar-brand img{
+            width: 50px;
+            height: 50px;
+        }
+        .star-rating{
+            color: goldenrod;
+        }
+        .active-line{
+            background: red;
+            width: 45px;
+            height: 4px;
+            transform: skewX(-20deg);
+            margin-left: 13px;
+        }
+        .img-product{
+            width: 350px;
+            height: 200px;
+        }
+        .cart-amount {
+            font-size: 25px;
+
+        }
+
+        #btnBo {
+            width: 50px;
+            height: 30px;
+        }
+
+        .remove-item a {
+            text-decoration: none;
+            color: grey;
+        }
+        .icon-badge{
+            font-size: 20px;
+        }
+        .myfooter ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .myfooter ul>li>a {
+            text-decoration: none;
+            color: white;
+        }
+        .myfooter ul>li>a:hover {
+            text-decoration: none;
+            color: orange;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+        }

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ với Tunes Shop</title>
+
+    <link href="../assest/img/icon/favicon.ico" type="image/icon" rel="icon" />
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assest/css/app.css" type="text/css" />
+</head>
+
+<body>
+
+    <!-- Star header -->
+    <section>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="../index.html"><img src="../assest/img/logo/tuneshop-logo.png" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                </button>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Nhập sản phẩm" aria-label="Search">
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Tìm kiếm</button>
+                </form>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav main-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Trang chủ <span
+                                    class="sr-only">(current)</span></a>
+                            <div class="line"></div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Giới thiệu</a>
+                            <div class="line"></div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contact.html">Liên hệ</a>
+                            <div class="active-line"></div>
+                            <div class="line"></div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html">Góp ý</a>
+                            <div class="line"></div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Sản phẩm</a>
+                            <div class="line"></div>
+                        </li>
+                    </ul>
+
+                </div>
+                <ul class="navbar-nav px-3">
+                    <li class="nav-item text-nowrap">
+                        <a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Giỏ
+                            hàng</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Tài khoản
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="register.html">Đăng ký</a>
+                            <a class="dropdown-item" href="login.html">Đăng nhập</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <!-- End header -->
+
+    <!-- Start content -->
+    <div id="app">
+        <div class="container mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Liên hệ với TunesShop</h2>
+                </div>
+                <div class="card-body">
+                    <form name="frmLienhe" id="frmLienhe" method="POST" action="#" novalidate="true"
+                        v-on:submit="kiemtraDulieu">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Họ tên</label>
+                                    <input type="text" name="txtHoten" id="txtHoten" class="form-control"
+                                        v-model="hoten" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="txtEmail" id="txtEmail" class="form-control"
+                                        v-model="email" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Số điện thoại</label>
+                                    <input type="tel" name="txtSodienthoai" id="txtSodienthoai" class="form-control"
+                                        v-model="sodienthoai" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Nội dung liên hệ</label>
+                                    <textarea name="txtLoinhan" id="txtLoinhan" class="form-control"
+                                        v-model="loinhan"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <button name="btnGui" id="btnGui" class="btn btn-primary">Gửi thông tin</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="alert alert-danger" role="alert" v-if="errors.length > 0">
+                <b>Hãy kiếm tra lỗi sau:</b>
+                <ul>
+                    <li v-for="err in errors">{{ err }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End content -->
+
+    <!-- footer -->
+
+    <section id="section-connect-footer">
+        <div class="container text-center mt-4">
+            <div class="row">
+                <div class="col">
+
+                    <ul class="connect-with-us">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a> <small
+                                class="text-muted">Kết nối với chúng tôi</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul>
+                        <li>
+                            <span class="list-footer"><a href="about.html">GIỚI THIỆU</a></span>
+                        </li>
+                        <hr class="list-footer-line" />
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul>
+                        <li>
+                            <span class="list-footer"><a href="products.html">SẢN PHẨM</a></span>
+                        </li>
+                        <hr class="list-footer-line" />
+                        <li>
+                            <span class="list-footer"><a href="products.html">IPHONE</a></span>
+                        </li>
+                        <li>
+                            <span class="list-footer"><a href="products.html">SAMSUNG</a></span>
+                        </li>
+                        <li>
+                            <span class="list-footer"><a href="products.html">OPPO</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul>
+                        <li>
+                            <span class="list-footer"><a href="warranty.html">CHÍNH SÁCH BẢO HÀNH</a></span>
+                        </li>
+                        <hr class="list-footer-line" />
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul>
+                        <li>
+                            <span class="list-footer"><a href="about.html">LIÊN HỆ</a></span>
+                        </li>
+                        <hr class="list-footer-line" />
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span>Bản quyền © bởi <a href="#">TUNES SHOP</a> -
+                <script>document.write(new Date().getFullYear());</script>.</span>
+            <span class="text-muted">Điện thoại thông minh</span>
+
+            <p class="float-right">
+                <a href="#">Về đầu trang</a>
+            </p>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/vue/vue.js"></script>
+
+    <script src="../assest/js/contact.js"></script>
+</body>
+
+</html>

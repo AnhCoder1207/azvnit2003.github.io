@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnhDT Shop - Cửa hàng điện thoại di động</title>
+
+    <link href="assest/img/icon/favicon.ico" type="image/icon" rel="icon" />
+    <link href="vendor/jquery-ui/jquery-ui.min.css" type="text/css" rel="stylesheet " />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="vendor/OwlCarousel2/dist/assets/owl.carousel.min.css" type="text/css" rel="stylesheet" />
+    <link href="assest/css/app.css" type="text/css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" type="text/css"
+        rel="stylesheet" />
+</head>
+
+<body ng-app="shop" ng-controller="shopCtrl">
+
+    <!-- Start head -->
+    <div ng-include="'./pages/head.html'"></div>
+    <!-- end head  -->
+    <hr />
+    <!-- Start highlights product -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="p-2 mb-2 bg-info text-white">
+                        <h3><i class="fa fa-chevron-right text-danger" aria-hidden="true"></i> SẢN PHẨM NỔI BẬT</h3>
+                    </div>
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="card">
+                                <img src="assest/img/product/iphone/iphone-se-128gb-trang-1.jpg"
+                                    class="card-img-top img-fluid">
+                                <div class="card-body">
+                                    <h5 class="card-title">Iphone SE 128GB</h5>
+                                    <p class="card-name">
+                                        Điện thoại<br />
+                                        <span class="new-price">12.400.000đ</span>
+                                        <small class="text-muted"><s>14.900.000đ</s></small>
+                                    </p>
+                                    <a class="btn btn-outline-secondary btn-sm" href="pages/iphone-se-detail.html"
+                                        role="button">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card">
+                                <img src="assest/img/product/iphone/iphone-11-64gb-do-1.jpg"
+                                    class="card-img-top img-fluid">
+                                <div class="card-body">
+                                    <h5 class="card-title">Iphone 11 64GB</h5>
+                                    <p class="card-name">
+                                        Điện thoại<br />
+                                        <span class="new-price">19.500.000đ</span>
+                                        <small class="text-muted"><s>21.900.000đ</s></small>
+                                    </p>
+                                    <a class="btn btn-outline-secondary btn-sm" href="pages/iphone-11-detail.html"
+                                        role="button">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card">
+                                <img src="assest/img/product/samsung/samsung-a51-128gb-xanh-1.jpg"
+                                    class="card-img-top img-fluid">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung A51</h5>
+                                    <p class="card-name">
+                                        Điện thoại<br />
+                                        <span class="new-price">6.200.000đ</span>
+                                        <small class="text-muted"><s>7.900.000đ</s></small>
+                                    </p>
+                                    <a class="btn btn-outline-secondary btn-sm"
+                                        href="pages/samsung-galaxy-a51-detail.html" role="button">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card">
+                                <img src="assest/img/product/samsung/samsung-galaxy-note-10plus-den-1.jpg"
+                                    class="card-img-top img-fluid">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Note10+</h5>
+                                    <p class="card-name">
+                                        Điện thoại<br />
+                                        <span class="new-price">17.500.000đ</span>
+                                        <small class="text-muted"><s>26.900.000đ</s></small>
+                                    </p>
+                                    <a class="btn btn-outline-secondary btn-sm"
+                                        href="pages/samsung-galaxy-note10-plus-detail.html" role="button">Xem chi
+                                        tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card">
+                                <img src="assest/img/product/oppo/oppo-a92-trang-1.jpg" class="card-img-top img-fluid">
+                                <div class="card-body">
+                                    <h5 class="card-title">OPPO A92</h5>
+                                    <p class="card-name">
+                                        Điện thoại<br />
+                                        <span class="new-price">5.900.000đ</span>
+                                        <small class="text-muted"><s>6.900.000đ</s></small>
+                                    </p>
+                                    <a class="btn btn-outline-secondary btn-sm" href="pages/oppo-a92-detail.html"
+                                        role="button">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End highlights product -->
+
+    <section>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="assest/img/banner/banner-product.png" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr />
+    <!-- Start product -->
+    <section>
+        <div id="app">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="p-2 mb-2 bg-info text-white">
+                            <h3><i class="fa fa-chevron-right text-danger" aria-hidden="true"></i> TẤT CẢ SẢN PHẨM</h3>
+                        </div>
+                        <div class="row row-cols-4">
+                            <div class="col py-3" ng-repeat="product in products">
+                                <div class="card h-100 shadow-sm card-item">
+                                    <div class="text-center">
+                                        <img src="{{product.images}}" class="card-img-top img-fluid py-3">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">{{product.title}}</h5>
+                                        <p class="card-text">
+                                            <span class="new-price">{{product.newprice}}</span>
+                                            <s>{{product.oldprice}}</s>
+                                        </p>
+                                        <span class="star-rating">
+                                            <!-- sử dụng getProductStars là một hàm để trả về một mảng số từ 1 đến starCount. Hàm này sẽ trả về một mảng để ng-repeat có thể lặp lại đúng số lần tương ứng với starCount -->
+                                            <i class="fa fa-star" aria-hidden="true"
+                                                ng-repeat="item in getProductStars(product.star) track by $index"
+                                                ng-class="{'active': $index < item}"></i>
+
+                                        </span> | {{product.rate}} đánh giá
+                                    </div>
+                                    <div class="card-footer">
+                                        <span><a href="{{product.link}}">XEM CHI TIẾT</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End product -->
+
+    <!-- footer -->
+    <div ng-include="'./pages/footer.html'"></div>
+    <!-- end footer -->
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
+
+    <script src="assest/js/index.js"></script>
+    <script>
+        var app = angular.module("shop", []);
+        angular.module("shop", []).controller("shopCtrl", function ($scope, $http) {
+            $scope.products = [];
+            $http.get("./assest/js/product.json").then(function (reponse) {
+                $scope.products = reponse.data;
+            });
+            $scope.isLoading = false;
+
+            $scope.loadData = function () {
+                $scope.isLoading = true;
+
+                // Simulate asynchronous data loading
+                $http.get('/api/data').then(function (response) {
+                    // Xử lý dữ liệu nhận được
+
+                    $scope.isLoading = false;
+                });
+            };
+            $scope.getProductStars = function (starCount) {
+                return Array(starCount).fill().map((_, index) => index + 1);
+            };
+        });
+    </script>
+</body>
+
+</html>
