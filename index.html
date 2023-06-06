@@ -19,79 +19,87 @@
 </head>
 
 <body ng-app="shop" ng-controller="shopCtrl">
+    <div ng-show="isLoading" class="loading">
+        <div class="spinner"></div>
+    </div>
 
-    <!-- Start head -->
-    <div ng-include="'./pages/head.html'"></div>
-    <!-- end head  -->
-    <hr />
-    <!-- Start highlights product -->
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="p-2 mb-2 bg-info text-white">
-                        <h3><i class="fa fa-chevron-right text-danger" aria-hidden="true"></i> SẢN PHẨM NỔI BẬT</h3>
-                    </div>
-                    <!-- <h3 class="text-danger text-center">CHỔ NÌ ĐANG LỖI =)))</h1> -->
-                    <div class="owl-carousel owl-theme">
-                        <div class="item" ng-repeat="product in products | filter: {outstanding: 'true'} | limitTo: 5">
-                            <div class="card">
-                                <img ng-src="{{product.images}}" class="card-img-top img-fluid">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{product.title}}</h5>
-                                    <p class="card-name">
-                                        Điện thoại<br />
-                                        <span class="new-price">{{product.newprice}}</span>
-                                        <small class="text-muted"><s>{{product.oldprice}}</s></small>
-                                    </p>    
-                                    <a class="btn btn-outline-secondary btn-sm" ng-href="{{product.link}}"
-                                        role="button">Xem chi tiết</a>
+    <div ng-show="!isLoading">
+        <!-- Start head -->
+        <div ng-include="'./pages/head.html'"></div>
+        <!-- end head  -->
+        <hr />
+        <!-- Start highlights product -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="p-2 mb-2 bg-info text-white">
+                            <h3><i class="fa fa-chevron-right text-danger" aria-hidden="true"></i> SẢN PHẨM NỔI BẬT</h3>
+                        </div>
+                        <!-- <h3 class="text-danger text-center">CHỔ NÌ ĐANG LỖI =)))</h1> -->
+                        <div class="owl-carousel owl-theme">
+                            <div class="item"
+                                ng-repeat="product in products | filter: 'true' | limitTo: 5">
+                                <div class="card">  
+                                    <img ng-src="{{product.images}}" class="card-img-top img-fluid">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{product.title}}</h5>
+                                        <p class="card-name">
+                                            Điện thoại<br />
+                                            <span class="new-price">{{product.newprice}}</span>
+                                            <small class="text-muted"><s>{{product.oldprice}}</s></small>
+                                        </p>
+                                        <a class="btn btn-outline-secondary btn-sm" ng-href="{{product.link}}"
+                                            role="button">Xem chi tiết</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <section>
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-12">
-                    <img src="assest/img/banner/banner-product.png" class="img-fluid" />
+        <section>
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="assest/img/banner/banner-product.png" class="img-fluid" />
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <hr />
+        <hr />
 
-    <!-- End highlights product -->
-    <div ng-view></div>
-    <!-- Start iphone -->
-    <div ng-include="'./pages/iphone.html'"></div>
-    <!-- End iphone -->
-    <!-- Start samsung -->
-    <div ng-include="'./pages/samsung.html'"></div>
-    <!-- End samsung -->
-    <!-- Start oppo -->
-    <div ng-include="'./pages/oppo.html'"></div>
-    <!-- End oppo -->
-    <!-- Start product -->
-    <div ng-include="'./pages/prd.html'"></div>
-    <!-- End product -->
+        <!-- End highlights product -->
+        <div ng-view></div>
+        <!-- Start iphone -->
+        <div ng-include="'./pages/iphone.html'"></div>
+        <!-- End iphone -->
+        <!-- Start samsung -->
+        <div ng-include="'./pages/samsung.html'"></div>
+        <!-- End samsung -->
+        <!-- Start oppo -->
+        <div ng-include="'./pages/oppo.html'"></div>
+        <!-- End oppo -->
+        <!-- Start product -->
+        <div ng-include="'./pages/prd.html'"></div>
+        <!-- End product -->
 
-    <!-- footer -->
-    <div ng-include="'./pages/footer.html'"></div>
-    <!-- end footer -->
+        <!-- footer -->
+        <div ng-include="'./pages/footer.html'"></div>
+        <!-- end footer -->
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
-    <script src="assest/js/script.js"></script>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
+        <script src="assest/js/script.js"></script>
+    </div>
+
+
 </body>
 
 </html>
