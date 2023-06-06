@@ -32,9 +32,9 @@
                     <div class="p-2 mb-2 bg-info text-white">
                         <h3><i class="fa fa-chevron-right text-danger" aria-hidden="true"></i> SẢN PHẨM NỔI BẬT</h3>
                     </div>
-                    <h3 class="text-danger text-center">CHỔ NÌ ĐANG LỖI =)))</h1>
-                    <!-- <div class="owl-carousel owl-theme">
-                        <div class="item" ng-repeat="product in products | filter: 'true'">
+                    <!-- <h3 class="text-danger text-center">CHỔ NÌ ĐANG LỖI =)))</h1> -->
+                    <div class="owl-carousel owl-theme">
+                        <div class="item" ng-repeat="product in products | filter: {outstanding: 'true'} | limitTo: 5">
                             <div class="card">
                                 <img ng-src="{{product.images}}" class="card-img-top img-fluid">
                                 <div class="card-body">
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,47 +91,7 @@
     <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
-
-    <script>
-        var app = angular.module("shop", ["ngRoute"]);
-        angular.module("shop", []).controller("shopCtrl", function ($scope, $http) {
-            $scope.products = [];
-            $http.get("./assest/js/product.json").then(function (reponse) {
-                $scope.products = reponse.data;
-            });
-            $scope.isLoading = false;
-
-            $scope.loadData = function () {
-                $scope.isLoading = true;
-
-                // Simulate asynchronous data loading
-                $http.get('/api/data').then(function (response) {
-                    // Xử lý dữ liệu nhận được
-
-                    $scope.isLoading = false;
-                });
-            };
-            $scope.getProductStars = function (starCount) {
-                return Array(starCount).fill().map((_, index) => index + 1);
-            };
-        });
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
-                }
-            }
-        });
-    </script>
+    <script src="assest/js/script.js"></script>
 </body>
 
 </html>
