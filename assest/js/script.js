@@ -32,16 +32,17 @@ angular.module("shop", []).controller("shopCtrl", function ($scope, $http) {
 $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
-    nav: true,
-    responsive: {
-        0: {
-            items: 1
-        },
-        600: {
-            items: 3
-        },
-        1000: {
-            items: 5
-        }
-    }
+    nav: true, 
+    items: 2
+    // responsive: {
+    //     0: {
+    //         items: 1
+    //     },
+    //     600: {
+    //         items: 3
+    //     },
+    //     1000: {
+    //         items: 5
+    //     }
+    // }
 });
