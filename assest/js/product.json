@@ -1,7 +1,8 @@
 [
     {
+        "id" : 1,
         "type": "iphone",
-        "outstanding": true,
+        "outstanding": false,
         "star": 4,
         "images": "../assest/img/product/iphone/iphone-8-plus-128gb-vang-dong-1.jpg",
         "title": "Iphone 8 Plus 128GB",
@@ -11,6 +12,7 @@
         "link": "pages/iphone-8-plus-detail.html"
     },
     {
+        "id": 2,
         "type": "iphone",
         "outstanding": true,
         "star": 3,
@@ -22,6 +24,7 @@
         "link": "pages/iphone-11-detail.html"
     },
     {
+        "id": 3,
         "type": "iphone",
         "outstanding": false,
         "star": 4,
@@ -33,6 +36,7 @@
         "link": "pages/iphone-11-promax-detail.html"
     },
     {
+        "id": 4,
         "type": "iphone",
         "outstanding": false,
         "star": 4,
@@ -44,6 +48,7 @@
         "link": "pages/iphone-se-detail.html"
     },
     {
+        "id": 5,
         "type": "iphone",
         "outstanding": false,
         "star": 5,
@@ -55,6 +60,7 @@
         "link": "pages/iphone-7-plus-detail.html"
     },
     {
+        "id": 6,
         "type": "samsung",
         "outstanding": true,
         "star": 3,
@@ -66,6 +72,7 @@
         "link": "pages/samsung-galaxy-a31-detail.html"
     },
     {
+        "id": 7,
         "type": "samsung",
         "outstanding": true,
         "star": 4,
@@ -77,6 +84,7 @@
         "link": "pages/samsung-galaxy-a51-detail.html"
     },
     {
+        "id": 8,
         "type": "samsung",
         "outstanding": false,
         "star": 4,
@@ -88,6 +96,7 @@
         "link": "pages/samsung-galaxy-a71-detail.html"
     },
     {
+        "id": 9,
         "type": "samsung",
         "outstanding": false,
         "star": 5,
@@ -99,6 +108,7 @@
         "link": "pages/samsung-galaxy-note10-plus-detail.html"
     },
     {
+        "id": 10,
         "type": "samsung",
         "outstanding": false,
         "star": 4,
@@ -110,6 +120,7 @@
         "link": "pages/samsung-galaxy-s20-plus-detail.html"
     },
     {
+        "id": 11,
         "type": "oppo",
         "outstanding": true,
         "star": 4,
@@ -121,6 +132,7 @@
         "link": "pages/oppo-a12-detail.html"
     },
     {
+        "id": 12,
         "type": "oppo",
         "outstanding": false,
         "star": 4,
@@ -132,6 +144,7 @@
         "link": "pages/oppo-a31-detail.html"
     },
     {
+        "id": 13,
         "type": "oppo",
         "outstanding": false,
         "star": 3,
@@ -143,6 +156,7 @@
         "link": "pages/oppo-a92-detail.html"
     },
     {
+        "id": 14,
         "type": "oppo",
         "outstanding": false,
         "star": 4,

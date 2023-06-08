@@ -1,48 +1,32 @@
-var app = angular.module("shop", ["ngRoute"]).controller('shopCtrl', function ($scope, $timeout) {
-    $scope.isLoading = true;
-
-    // Simulate loading data
-    $timeout(function () {
-        $scope.isLoading = false;
-    }, 3000);
-});
-angular.module("shop", []).controller("shopCtrl", function ($scope, $http) {
-    $scope.limitNumber = 5;
-    $scope.products = [];
-    $http.get("./assest/js/product.json").then(function (reponse) {
-        $scope.products = reponse.data;
-    });
-    $scope.isLoading = false;
-
-    $scope.loadData = function () {
-        $scope.isLoading = true;
-
-        // Simulate asynchronous data loading
-        $http.get('/api/data').then(function (response) {
-            // Xử lý dữ liệu nhận được
-
-            $scope.isLoading = false;
+var app = angular.module("shop", ["ngRoute"]);
+    app.controller("shopCtrl", function($scope, $rootScope, $routeParams, $http)
+    {
+        $scope.products = [];
+        $http.get("./assest/js/product.json").then(function (reponse){
+            $scope.products =reponse.data;
+            for(i = 0; i < $scope.products.length; i++){
+                if($scope.products[i].id == $routeParams.id){
+                    $scope.index=i;
+                }
+            }
         });
-    };
-    $scope.getProductStars = function (starCount) {
-        return Array(starCount).fill().map((_, index) => index + 1);
-    };
-
-});
-$('.owl-carousel').owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true, 
-    items: 2
-    // responsive: {
-    //     0: {
-    //         items: 1
-    //     },
-    //     600: {
-    //         items: 3
-    //     },
-    //     1000: {
-    //         items: 5
-    //     }
-    // }
-});
+    });
+        app.config(function ($routeProvider){
+            $routeProvider
+            .when("/detail/:id", {
+                templateUrl: "detailprd.html?" + Math.random(),
+                controller: "shopCtrl",
+            })
+            .when("/cart/:id", {
+                templateUrl: "cart.html?" + Math.random(),
+                controller: "shopCtrl",
+            })
+            .when("/1", {
+                templateUrl: "about.html",
+                controller: "shopCtrl",
+            })
+            .otherwise({
+                templateUrl: "product.html",
+                controller: "shopCtrl",
+            });
+        });
