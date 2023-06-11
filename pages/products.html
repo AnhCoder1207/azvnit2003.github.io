@@ -1,0 +1,211 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="p-2 mb-2 bg-info text-white">
+                    <h3><i class="fa fa-chevron-right text-danger" aria-hidden="true"></i> SẢN PHẨM NỔI BẬT</h3>
+                </div>
+                <!-- <h3 class="text-danger text-center">CHỔ NÌ ĐANG LỖI =)))</h1> -->
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                        <div class="col py-3" ng-repeat="product in products | filter: 'true'">
+                            <div class="card h-100 shadow-sm card-item">
+                                <div class="text-center">
+                                    <img src="{{product.images}}" class="card-img-top img-fluid py-3">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">{{product.title}}</h5>
+                                    <p class="card-text">
+                                        <span class="new-price">{{product.newprice}}</span>
+                                        <s>{{product.oldprice}}</s>
+                                    </p>
+                                    <span class="star-rating">
+                                        <i class="fa fa-star" aria-hidden="true"
+                                            ng-repeat="item in getProductStars(product.star) track by $index"
+                                            ng-class="{'active': $index < item}"></i>
+                                    </span> | {{product.rate}} đánh giá
+                                </div>
+                                <div class="card-footer">
+                                    <span><a href="#!detail/{{product.id}}" class="text-reset">XEM CHI TIẾT</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="assest/img/banner/banner-product.png" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr />
+<section>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="p-2 mb-2 bg-info text-white">
+                        <h3><i class="fa fa-chevron-right text-danger" aria-hidden="true"></i> TẤT CẢ SẢN PHẨM</h3>
+                    </div>
+                        <div class="w-auto text-right mt-3">
+                            <button class="btn btn-danger text-light bg-opacity-25 fs-6 rounded-0 text-uppercase fw-bold"
+                                ng-click="filterItems('Iphone')">iPhones</button>
+                            <button class="btn btn-danger text-light bg-opacity-25 fs-6 rounded-0 text-uppercase fw-bold"
+                                ng-click="filterItems('Samsung')">Samsung</button>
+                                <button class="btn btn-danger text-light bg-opacity-25 fs-6 rounded-0 text-uppercase fw-bold"
+                                ng-click="filterItems('Oppo')">Oppo</button>
+                            <button class="btn btn-danger text-light bg-opacity-25 fs-6 rounded-0 text-uppercase fw-bold"
+                                ng-click="filterItems('')">Tất cả</button>
+                            <a class="btn btn-danger text-light bg-opacity-25 fs-6 rounded-0 text-uppercase fw-bold"
+                                href="#">Xem
+                                thêm</a>
+                        </div>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                        <div class="col py-3" ng-repeat="product in filteredItems | orderBy:propertyName:reverse">
+                            <div class="card h-100 shadow-sm card-item">
+                                <div class="text-center">
+                                    <img src="{{product.images}}" class="card-img-top img-fluid py-3">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">{{product.title}}</h5>
+                                    <p class="card-text">
+                                        <span class="new-price">{{product.newprice}}</span>
+                                        <s>{{product.oldprice}}</s>
+                                    </p>
+                                    <span class="star-rating">
+                                        <i class="fa fa-star" aria-hidden="true"
+                                            ng-repeat="item in getProductStars(product.star) track by $index"
+                                            ng-class="{'active': $index < item}"></i>
+                                    </span> | {{product.rate}} đánh giá
+                                </div>
+                                <div class="card-footer">
+                                    <span><a href="#!detail/{{product.id}}" class="text-reset" class="text-reset">XEM CHI TIẾT</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<section>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="p-2 mb-2 bg-info text-white">
+                        <h3><i class="fa fa-chevron-right text-danger" aria-hidden="true"></i> IPHONE</h3>
+                    </div>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                        <div class="col py-3" ng-repeat="product in products | filter: 'iphone'">
+                            <div class="card h-100 shadow-sm card-item">
+                                <div class="text-center">
+                                    <img src="{{product.images}}" class="card-img-top img-fluid py-3">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">{{product.title}}</h5>
+                                    <p class="card-text">
+                                        <span class="new-price">{{product.newprice}}</span>
+                                        <s>{{product.oldprice}}</s>
+                                    </p>
+                                    <span class="star-rating">
+                                        <i class="fa fa-star" aria-hidden="true"
+                                            ng-repeat="item in getProductStars(product.star) track by $index"
+                                            ng-class="{'active': $index < item}"></i>
+                                    </span> | {{product.rate}} đánh giá
+                                </div>
+                                <div class="card-footer">
+                                    <span><a href="#!detail/{{product.id}}" class="text-reset" class="text-reset">XEM CHI TIẾT</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="p-2 mb-2 bg-info text-white">
+                        <h3><i class="fa fa-chevron-right text-danger" aria-hidden="true"></i> SAMSUNG</h3>
+                    </div>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                        <div class="col py-3" ng-repeat="product in products | filter: 'samsung'">
+                            <div class="card h-100 shadow-sm card-item">
+                                <div class="text-center">
+                                    <img src="{{product.images}}" class="card-img-top img-fluid py-3">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">{{product.title}}</h5>
+                                    <p class="card-text">
+                                        <span class="new-price">{{product.newprice}}</span>
+                                        <s>{{product.oldprice}}</s>
+                                    </p>
+                                    <span class="star-rating">
+                                        <i class="fa fa-star" aria-hidden="true"
+                                            ng-repeat="item in getProductStars(product.star) track by $index"
+                                            ng-class="{'active': $index < item}"></i>
+                                    </span> | {{product.rate}} đánh giá
+                                </div>
+                                <div class="card-footer">
+                                    <span><a href="#!detail/{{product.id}}" class="text-reset">XEM CHI TIẾT</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="p-2 mb-2 bg-info text-white">
+                        <h3><i class="fa fa-chevron-right text-danger" aria-hidden="true"></i> OPPO</h3>
+                    </div>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                        <div class="col py-3" ng-repeat="product in products | filter: 'oppo'">
+                            <div class="card h-100 shadow-sm card-item">
+                                <div class="text-center">
+                                    <img src="{{product.images}}" class="card-img-top img-fluid py-3">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">{{product.title}}</h5>
+                                    <p class="card-text">
+                                        <span class="new-price">{{product.newprice}}</span>
+                                        <s>{{product.oldprice}}</s>
+                                    </p>
+                                    <span class="star-rating">
+                                        <i class="fa fa-star" aria-hidden="true"
+                                            ng-repeat="item in getProductStars(product.star) track by $index"
+                                            ng-class="{'active': $index < item}"></i>
+                                    </span> | {{product.rate}} đánh giá
+                                </div>
+                                <div class="card-footer">
+                                    <span><a href="#!detail/{{product.id}}" class="text-reset">XEM CHI TIẾT</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

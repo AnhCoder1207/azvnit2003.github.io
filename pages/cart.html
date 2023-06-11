@@ -1,248 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+    <title>DCPhone Giỏ hàng</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tunes Shop - Giỏ hàng của bạn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="../assest/img/icon/favicon.ico" type="image/icon" rel="icon" />
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../assest/css/app.css" type="text/css" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assest/css/app.css">
 
+    <style>
+        
+    </style>
 </head>
 
-<body>
-    <!-- header -->
-    <section>
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="../index.html"><img src="../assest/img/logo/tuneshop-logo.png" /></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <!-- <span class="navbar-toggler-icon"></span> -->
-                </button>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Nhập sản phẩm" aria-label="Search">
-                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Tìm kiếm</button>
-                </form>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav main-menu">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="../index.html">Trang chủ <span class="sr-only">(current)</span></a>
-                            <div class="line"></div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">Giới thiệu</a>
-                            <div class="line"></div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Liên hệ</a>
-                            <div class="line"></div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="feedback.html">Góp ý</a>
-                            <div class="line"></div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="products.html">Sản phẩm</a>
-                            <div class="line"></div>
-                        </li>
-                    </ul>
-
+<body ng-app="myapp">
+    <main ng-controller="myCtrl">
+        <div class="container mt-5">
+            <form class="needs-validation " name="frmthanhtoan" method="post" action="#">
+                <input type="hidden" name="kh_tendangnhap" value="dnpcuong">
+                <div class="py-5 text-center">
+                    <i class="fa fa-solid fa-cart-shopping fa-4x mt-5" aria-hidden="true"></i>
+                    <h2>giỏ hàng</h2>
+                    <p class="lead">Vui lòng kiểm tra thông tin Giỏ hàng trước khi Đặt hàng.
+                    </p>
                 </div>
-                <ul class="navbar-nav px-3">
-                    <li class="nav-item text-nowrap">
-                        <a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"
-                                aria-hidden="true"></i> Giỏ hàng</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Tài khoản
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="register.html">Đăng ký</a>
-                            <a class="dropdown-item" href="login.html">Đăng nhập</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
         </div>
-    </section>
-    <!-- end header -->
-    <section>
-        <div class="container mt-4">
-            <div id="thongbao" class="alert alert-danger d-none face" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
+        <div class="container">
+            <table id="cart" class="table table-hover table-condensed" ng-repeat="prod in cart">
+                <thead>
+                    <tr>
+                        <th style="width:50%">Tên sản phẩm</th>
+                        <th style="width:10%">Giá</th>
+                        <th style="width:8%">Số lượng</th>
+                        <th style="width:22%" class="text-center">Thành tiền</th>
+                        <th style="width:10%"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-th=" Sản phẩm">
+                            <div class="row">
+                                <div class="col-sm-2 hidden-xs"><img src="{{prod.images}}" alt="Sản phẩm 1"
+                                        class="img-responsive" width="100">
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4 class="nomargin">{{prod.title}}</h4>
+                                    <p>{{prod.mt}}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-th="Giá">{{prod.newprice | currency : "VND " : 0}}đ</td>
+                        <td data-th="Số lượng">
+                            <div class="amount-product-buy d-flex justify-content-center">
+                                <a class="minus-product bg-dark bg-opacity-25  px-2" ng-click="minus($index)">
+                                    <i class="bi bi-dash fw-bolder text-dark fs-5"></i>
+                                </a>
+                                <div class="amount-product fs-5  px-2 border border-1">{{prod.quantity}}</div>
+                                <a class="add-plus bg-dark bg-opacity-25 px-2">
+                                    <i class="bi bi-plus-lg fw-bolder text-dark fs-5" ng-click="plus($index)"></i>
+                                </a>
+                            </div>
+                        </td>
+                        <td data-th="Tổng tiền" class="text-center">{{prod.total | currency : "VND " : 0}} đ</td>
+                        <td class="actions" data-th="">
+                            <button class="btn btn-danger btn-sm" ng-click="removeItem($index)"><i
+                                    class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
 
-            <h1 class="text-center">Giỏ hàng</h1>
-            <div class="row">
-                <div class="col col-md-12">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Sản phẩm</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Số lượng</th>
-                                <th>Đơn giá</th>
-                                <th>Thành tiền</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody id="datarow">
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <img src="../assest/img/product/iphone/iphone-11-64gb-do-1.jpg" class="img-product">
-                                </td>
-                                <td>Iphone 11</td>
-                                <td class="text-right">1</td>
-                                <td class="text-right">19.500.000</td>
-                                <td class="text-right">19.500.000đ</td>
-                                <td>
-                                    <a id="delete_1" data-sp-ma="2" class="btn btn-danger btn-delete-sanpham">
-                                        <i class="fa fa-trash" aria-hidden="true"></i> Xóa
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>
-                                    <img src="../assest/img/product/samsung/samsung-a51-128gb-xanh-1.jpg" class="img-product">
-                                </td>
-                                <td>Samsung Galaxy A51</td>
-                                <td class="text-right">1</td>
-                                <td class="text-right">6.200.000</td>
-                                <td class="text-right">6.200.000đ</td>
-                                <td>
-                                    <a id="delete_2" data-sp-ma="6" class="btn btn-danger btn-delete-sanpham">
-                                        <i class="fa fa-trash" aria-hidden="true"></i> Xóa
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>
-                                    <img src="../assest/img/product/samsung/samsung-a71-128gb-den-1.jpg" class="img-product">
-                                </td>
-                                <td>Samsung Galaxy A71</td>
-                                <td class="text-right">1</td>
-                                <td class="text-right">7.900.000</td>
-                                <td class="text-right">7.900.000đ</td>
-                                <td>
-                                    <a id="delete_3" data-sp-ma="4" class="btn btn-danger btn-delete-sanpham">
-                                        <i class="fa fa-trash" aria-hidden="true"></i> Xóa
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="text-right">
-                        <a href="../index.html" class="btn btn-warning btn-md"><i class="fa fa-arrow-left"
-                                aria-hidden="true"></i> Quay về trang chủ</a>
-                        <a href="checkout.html" class="btn btn-warning btn-md"><i class="fa fa-shopping-cart"
-                                aria-hidden="true"></i> Thanh toán</a>
+            </table>
+            <div class="cart-payment mt-5 sticky-bottom z-1 bg-light">
+                <div class="row border border-1 py-4 align-items-center mt-3 shadow-lg">
+                    <div class="col-sm-6">
+                        <div class="cart-payment-left d-flex hstack gap-3">
+                            <a href="" class="btn btn-warning"><i class="fa fa-angle-left"></i>
+                                Tiếp tục mua hàng</a>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="cart-payment-right  d-flex align-items-center justify-content-between hstack gap-3">
+
+                            <strong>Tổng tiền: {{getTotalPrice() | currency : "VND " : 0}} </strong>
+                            <a class="btn btn-success btn-block" ng-click="tt()">Thanh toán
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- footer -->
+    </main>
 
-    <section id="section-connect-footer">
-        <div class="container text-center mt-4">
-            <div class="row">
-                <div class="col">
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
 
-                    <ul class="connect-with-us">
-                        <li>
-                            <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a> <small
-                                class="text-muted">Kết nối với chúng tôi</small>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="section-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <ul>
-                        <li>
-                            <span class="list-footer"><a href="about.html">GIỚI THIỆU</a></span>
-                        </li>
-                        <hr class="list-footer-line" />
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <ul>
-                        <li>
-                            <span class="list-footer"><a href="products.html">SẢN PHẨM</a></span>
-                        </li>
-                        <hr class="list-footer-line" />
-                        <li>
-                            <span class="list-footer"><a href="products.html">IPHONE</a></span>
-                        </li>
-                        <li>
-                            <span class="list-footer"><a href="products.html">SAMSUNG</a></span>
-                        </li>
-                        <li>
-                            <span class="list-footer"><a href="products.html">OPPO</a></span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <ul>
-                        <li>
-                            <span class="list-footer"><a href="warranty.html">CHÍNH SÁCH BẢO HÀNH</a></span>
-                        </li>
-                        <hr class="list-footer-line" />
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <ul>
-                        <li>
-                            <span class="list-footer"><a href="about.html">LIÊN HỆ</a></span>
-                        </li>
-                        <hr class="list-footer-line" />
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer mt-auto py-3">
-        <div class="container">
-            <span>Bản quyền © bởi <a href="#">TUNES SHOP</a> -
-                <script>document.write(new Date().getFullYear());</script>.</span>
-            <span class="text-muted">Điện thoại thông minh</span>
-
-            <p class="float-right">
-                <a href="#">Về đầu trang</a>
-            </p>
-        </div>
-    </footer>
-    <!-- end footer -->
-
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
